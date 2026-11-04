@@ -4,6 +4,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import RevealObserver from "@/components/RevealObserver";
 import Interactions from "@/components/Interactions";
+import LiveLayer from "@/components/LiveLayer";
 import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
@@ -79,6 +80,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SiteFooter />
         <RevealObserver />
         <Interactions />
+        <LiveLayer />
       </body>
     </html>
   );

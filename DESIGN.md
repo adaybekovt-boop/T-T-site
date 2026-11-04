@@ -118,6 +118,17 @@ everything in place: no reveals, no page transitions.
   (860 x 1828). It is upscaled on wide screens; a larger original would be sharper.
 - Film grain on pictures only (`.grain-on`: plates, illustrations, screenshots,
   the home picture), never on the page background, as in the reference.
+- Revised at the owner's request: a moving film grain also covers the whole
+  page (`.film-grain` in `components/LiveLayer.tsx`), jittering at ~11 fps like
+  projected film; it stops under reduced motion.
+
+## Hands-on layer
+
+`components/LiveLayer.tsx` (tilt and magnet stay in `Interactions.tsx`):
+- Elastic drag: any heading, paragraph, list row or card can be pulled. It
+  follows with rubber-band resistance (90px at most) and springs back with one
+  overshoot. A drag never opens the link beneath it. The eclipse toy is excluded.
+- Text cannot be selected or copied (code and form fields excepted).
 
 ## Signature
 
