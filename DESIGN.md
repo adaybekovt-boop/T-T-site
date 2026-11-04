@@ -95,10 +95,22 @@ Allowed:
 - Header state change (paper ↔ night) when scrolling into the Games section,
   because the page background changes underneath it.
 
-Forbidden: fade-up on scroll for every section, hover scale on cards, animated
-arrows, marquees, parallax, scroll hijacking, loading screens, particles.
+Interaction layer (`components/LiveLayer.tsx`, added at the owner's request
+to make the page feel alive and hands-on):
+- Film grain over the whole page, jittering at ~11 fps like projected film;
+  the hero grain moves with it.
+- Elastic drag: any heading, paragraph, list row, card or the project index can
+  be pulled. It follows with rubber-band resistance (90px at most) and springs
+  back with one overshoot. A drag never opens the link beneath it.
+- Cards tilt toward the cursor and carry a copper spotlight; the hero discs
+  drift with the cursor; the hero button is magnetic.
+- Text cannot be selected or copied (code and form fields excepted).
+
+Still forbidden: fade-up on scroll for every section, marquees, scroll
+hijacking, loading screens, particles.
 `prefers-reduced-motion: reduce` renders the discs in their final position with
-no loop, and removes all transitions except color.
+no loop, stops the grain, removes tilt, parallax and the magnet, returns a
+dragged block without a bounce, and removes all transitions except color.
 
 ## Signature
 
